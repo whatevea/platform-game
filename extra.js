@@ -60,8 +60,7 @@ scene.physics.add.overlap(player,scene.coin,coinplayercollide)
 
 function coinplayercollide(bodyA,bodyB){
  //destroy the game object
-  bodyB.destroy()
-console.log(bodyB)
+  bodyB.destroy();
   //increase the score
   score++;
   scoreboard.text=`Score : ${score}`;

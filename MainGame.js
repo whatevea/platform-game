@@ -29,7 +29,6 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
   player.body.setSize(20,42)
     
     player.body.collideWorldBounds= true;
-    console.log(player.scene);
     this.physics.add.collider(player, layer1);
     layer1.setCollisionByProperty({ collides: true });
     // layer1.setCollison
