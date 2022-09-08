@@ -10,7 +10,15 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
     this.load.tilemapTiledJSON("map", "assets/level1.json");
     this.load.spritesheet("coin", "assets/coin.png", { frameHeight: 17, frameWidth: 17 });
     this.load.spritesheet("character", "assets/char33x47.png", { frameHeight: 47, frameWidth: 33 });
+ //loading powerups
+        this.load.image('bag', "assets/bag.png");
+        this.load.image('ball', "assets/ball.png");
+        this.load.image('bottle', "assets/bottle.png");
+        this.load.image('flower', "assets/flower.png");
+        this.load.image('phone', "assets/phone.png");
+      
   }
+  
 
   create() {
     //adding the flying emo code
