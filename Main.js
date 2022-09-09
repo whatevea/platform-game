@@ -3,6 +3,7 @@ const config = {
     width: 289,
     height: 289,
     backgroundColor: 0x000000,
+  pixelArt:true,
    physics: {
         default: 'arcade',
         arcade: {
@@ -21,5 +22,5 @@ var cursors;
 var score=0;
 var scoreboard;
 var scoreNumberfly;
-
+var inventory;
 //"config" is then used to specify the properties of the game. 

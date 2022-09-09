@@ -53,12 +53,11 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
     for(let i=1;i<10;i++){
         let coin=new Coins(this,(i*20)+100,20)
     }
-let inventory=new Inventory(this,5);
-    inventory.addItem(1,"bag");
-    inventory.addItem(2,"ball");
-    inventory.addItem(3,"phone");
-    inventory.addItem(4,"flower");
-    inventory.addItem(5,"bottle");
+ inventory=new Inventory(this,7);
+  let p1=new Powerups(this,130,100,"flower");
+  let p2=new Powerups(this,200,100,"bag");
+  let p3=new Powerups(this,100,100,"flower");
+  new Powerups(this,230,200,"phone");
     
     
   }
