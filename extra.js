@@ -50,20 +50,4 @@ function playerMovement(){
 		
 		}
 }
-//player and coin collision
-function playerCoinCollision(scene){
-scene.physics.add.overlap(player,scene.coin,coinplayercollide)
-
-}
-
-
-
-function coinplayercollide(bodyA,bodyB){
- //destroy the game object
-  bodyB.destroy();
-  //increase the score
-  score++;
-  scoreboard.text=`Score : ${score}`;
- scoreNumberfly.fly(player.x,player.y-20,player.x,player.y-70,"+1",2000);
-}
 

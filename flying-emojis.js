@@ -18,7 +18,7 @@ class FlyingEmo{
         duration: time,
         yoyo: false,
         repeat:0,
-        onComplete: function () { console.log('onComplete');
+        onComplete: function () {
         emoji.destroy()
     }
 

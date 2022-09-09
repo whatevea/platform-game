@@ -44,14 +44,15 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
     cursors = this.input.keyboard.createCursorKeys();
 
     jumpAbility() //jump ability
-    allAnimations(this); //coin animation
-    //making the coin
-    this.coin=this.add.sprite(150,100,"coin").play("turn");
-     this.physics.add.existing(this.coin,true);
+    allAnimations(this); //all animation
+  
     //making scoreboard
     scoreboard=this.add.text(12,12,"Score : 0");
-    //player eats coin
-    playerCoinCollision(this);
+
+  //random 10 coins
+    for(let i=1;i<10;i++){
+        let coin=new Coins(this,(i*20)+100,20)
+    }
     
   }
 
