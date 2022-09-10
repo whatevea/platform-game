@@ -5,6 +5,9 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
   }
 
   preload() {
+    this.load.image('money', "assets/money.png");
+    this.load.image('jump', "assets/jump.png");
+    
     this.load.image('background', "assets/ai_gen_bck.jpg");
     this.load.image('tiles', "assets/tileset_coll.png");
     this.load.tilemapTiledJSON("map", "assets/level1.json");
@@ -46,9 +49,9 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
     jumpAbility() //jump ability
     allAnimations(this); //all animation
   
-    //making scoreboard
-    scoreboard=this.add.text(12,12,"Score : 0");
-
+    //making hud
+    showHud(this);
+  
   //random 10 coins
     for(let i=1;i<10;i++){
         let coin=new Coins(this,(i*20)+100,20)

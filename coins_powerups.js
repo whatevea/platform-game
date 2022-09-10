@@ -12,7 +12,7 @@ class Coins extends Phaser.GameObjects.Sprite {
   coinplayercollide(bodyA, bodyB) {
     bodyB.destroy(); //destroy body
     score++;
-    scoreboard.text = `Score : ${score}`;
+    scoreboard.text = `${score}`;
     scoreNumberfly.fly(player.x, player.y - 20, player.x, player.y - 70, "+ 1$", 1000);
     player.alpha -= 0.1;
   }

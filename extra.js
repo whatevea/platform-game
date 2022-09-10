@@ -25,9 +25,11 @@ scene.anims.create({
 //player jump ability
 function jumpAbility(){
       cursors.up.on('down', function() {
-      if (player.body.blocked.down) {
+      if (jumpCount>0) {
 
         player.body.setVelocityY(-260);
+        jumpCount--;
+        jumpBoard.text=`${jumpCount}`;
       }
     }, this);
 }
@@ -51,3 +53,14 @@ function playerMovement(){
 		}
 }
 
+//showing hud function
+function showHud(scene){
+    scene.add.image(10,12,"money");
+    scoreboard=scene.add.text(20,6,"0");
+    scene.add.image(50,12,"jump");
+    jumpBoard=scene.add.text(57,6,"8");
+
+
+
+  
+}

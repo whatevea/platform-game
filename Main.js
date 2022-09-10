@@ -23,4 +23,6 @@ var score=0;
 var scoreboard;
 var scoreNumberfly;
 var inventory;
+var jumpCount=8;
+var jumpBoard;
 //"config" is then used to specify the properties of the game. 
