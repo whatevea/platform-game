@@ -59,8 +59,16 @@ function showHud(scene){
     scoreboard=scene.add.text(20,6,"0");
     scene.add.image(50,12,"jump");
     jumpBoard=scene.add.text(57,6,"8");
-
-
-
-  
 }
+function increaseScore(amount){
+  score=score+amount;
+    scoreboard.text = `${score}`;
+    scoreNumberfly.fly(player.x, player.y - 20, player.x, player.y - 70, "+ 1$", 1000);
+}
+
+//check overlap
+function checkOverlap(spriteA, spriteB) {
+	    var boundsA = spriteA.getBounds();
+	    var boundsB = spriteB.getBounds();
+	    return Phaser.Geom.Intersects.RectangleToRectangle(boundsA, boundsB);
+	}

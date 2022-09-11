@@ -7,7 +7,7 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
   preload() {
     this.load.image('money', "assets/money.png");
     this.load.image('jump', "assets/jump.png");
-    
+    this.load.image('shop','assets/shop.png');
     this.load.image('background', "assets/ai_gen_bck.jpg");
     this.load.image('tiles', "assets/tileset_coll.png");
     this.load.tilemapTiledJSON("map", "assets/level1.json");
@@ -56,18 +56,19 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
     for(let i=1;i<10;i++){
         let coin=new Coins(this,(i*20)+100,20)
     }
- inventory=new Inventory(this,7);
+ //calling inventory and 1 item showing
+    inventory=new Inventory(this,7);
   let p1=new Powerups(this,130,100,"flower");
-  let p2=new Powerups(this,200,100,"bag");
-  let p3=new Powerups(this,100,100,"flower");
-  new Powerups(this,230,200,"phone");
+  
     
+    //adding shop 
+shop=this.add.image(170,100,"shop");
+
     
   }
 
   update() {
-    
-    playerMovement() //normal player movement code
+     playerMovement() //normal player movement code
 
 
   }

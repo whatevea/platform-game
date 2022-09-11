@@ -1,23 +1,10 @@
-const items = [
-  {
-    name: "bag",
-    cost: 12
-  },
-  {
-    name: "flower",
-    cost: 5
-  },
-  {
-    name: "bottle",
-    cost: 3
-  },
-  {
-    name: "phone"
-    , cost: 20
-  },
-  {
-    name: "ball",
-    cost: 5
+const items_json = {
+  "bag":{"cost":10},
+  "phone":{"cost":20},
+  "flower":{"cost":4},
+  "bottle":{"cost":6},
+  "ball":{"cost":10}
+  
+         
   }
 
-]
