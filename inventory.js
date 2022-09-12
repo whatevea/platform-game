@@ -1,23 +1,23 @@
 class Inventory {
-  constructor(scene, limit) {
+  constructor(scene,y_location, limit) {
     this.scene = scene;
     this.height = 47;
     this.width = config.width - 4;
     this.limit = limit;
     let x = 2
-    let y = 240
+    this.y_location=y_location;
     //make a box of height and width 
     let graphics = scene.add.graphics();
     var thickness = 1;
     var color = 0x00ff00;
     var alpha = 1;
     graphics.lineStyle(thickness, color, alpha);
-    graphics.strokeRect(x, y, this.width, this.height);
-    this.storage=new Array(limit).fill({"filled":false,"item":"","sprite":""});
+    graphics.strokeRect(x, y_location, this.width, this.height);
+    this.storage=new   Array(limit).fill({"filled":false,"item":"","sprite":""});
     //construct boxes max limit 7 according to resolution
     for(let i = 0; i< limit; i++) {
     let graphics = scene.add.graphics();
-    graphics.strokeRect((i*40)+2, y + 2, 40, 42)
+    graphics.strokeRect((i*40)+2, y_location + 2, 40, 42)
 }
 
     
@@ -29,7 +29,7 @@ addItem(item){
   
 let _location=this.getBlankLocation();  
 let topleftcornerX=((_location)*40)+3;
-let y=244;
+let y=this.y_location+4;
 let height=38;
 let width=38;
 

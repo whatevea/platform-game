@@ -1,9 +1,11 @@
 const config = {
     type: Phaser.CANVAS,//There is also phaser.canvas and phaser.webgl, but phaser.auto just does whatever is available. So it will try to do webgl, and if that doesn't work, it will do canvas. 
-    width: 289,
-    height: 289,
+    width: 752,
+    height: 416,
     backgroundColor: 0x000000,
   pixelArt:true,
+  scale:{mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH},
    physics: {
         default: 'arcade',
         arcade: {
