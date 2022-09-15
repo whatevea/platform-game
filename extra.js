@@ -90,10 +90,14 @@ function doJump() {
 }
 function renderFlag(scene, totalcoins, x, y) {
   let flag_ = scene.add.image(x, y, "flag").setScale(2);
-  scene.add.text(x - 25, y + 22, totalcoins);
+  scene.add.text(x - 21, y + 22, totalcoins);
   scene.physics.add.existing(flag_, true);
-  scene.physics.add.overlap(player, flag_, gameWin)
+  let mycollider=scene.physics.add.overlap(player, flag_, gameWin);
+
 }
-function gameWin() {
-  swal("You won the game ", "success")
-}
+function gameWin(bodyA) {
+  if (score>=bodyA.scene.totalcoins)
+  {swal("You won the game ", "success");
+bodyA.scene.scene.remove("MainGame")
+   document.write("goodbye")
+}}

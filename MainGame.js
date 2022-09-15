@@ -26,8 +26,7 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
 
   create() {
     
-    let totalcoins=20;
-    renderFlag(this,totalcoins,635,100)
+    this.totalcoins=20;
     //adding the flying emo code
    scoreNumberfly=new FlyingEmo(this,16) ;
     
@@ -63,6 +62,8 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
     
     //adding shop 
 shop=this.add.image(170,130,"shop").setDepth(-1);
+        renderFlag(this,this.totalcoins,635,100);
+
 }
 
   update() {
