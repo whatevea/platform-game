@@ -20,11 +20,14 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
         this.load.image('bottle', "assets/bottle.png");
         this.load.image('flower', "assets/flower.png");
         this.load.image('phone', "assets/phone.png");
-      
+      this.load.image("flag",'assets/flag.png');
   }
   
 
   create() {
+    
+    let totalcoins=20;
+    renderFlag(this,totalcoins,635,100)
     //adding the flying emo code
    scoreNumberfly=new FlyingEmo(this,16) ;
     
@@ -59,10 +62,8 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
   inventory.addItem("flower");
     
     //adding shop 
-shop=this.add.image(170,100,"shop");
-
-    
-  }
+shop=this.add.image(170,130,"shop").setDepth(-1);
+}
 
   update() {
      playerMovement() //normal player movement code
