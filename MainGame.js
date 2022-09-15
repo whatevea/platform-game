@@ -29,7 +29,7 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
    scoreNumberfly=new FlyingEmo(this,16) ;
     
     //adding background and animating it
-    this.add.image(0, 0, "background").setOrigin(0, 0).setScale(2);
+    // this.add.image(0, 0, "background").setOrigin(0, 0).setScale(2);
 
       
     //creating a player 
@@ -56,7 +56,7 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
  //calling inventory and 1 item showing
    inventory=new Inventory(this,config.height-55,7);
   let p1=new Powerups(this,130,100,"flower");
-  
+  inventory.addItem("flower");
     
     //adding shop 
 shop=this.add.image(170,100,"shop");
@@ -66,6 +66,7 @@ shop=this.add.image(170,100,"shop");
 
   update() {
      playerMovement() //normal player movement code
+    playerDeath();
 
 
   }

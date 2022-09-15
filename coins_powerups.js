@@ -12,7 +12,8 @@ class Coins extends Phaser.GameObjects.Sprite {
   coinplayercollide(bodyA, bodyB) {
     bodyB.destroy(); //destroy body
     increaseScore(1);
-    
+    player.alpha -= 0.04;
+
   }
 
 }
@@ -29,10 +30,10 @@ class Powerups extends Phaser.GameObjects.Sprite {
   }
 
   powerup_playercollide(bodyA, bodyB) {
-  
+
     inventory.addItem(bodyB.item);
     bodyB.destroy(); //destroy body
-    
+
   }
 
 }

@@ -25,12 +25,7 @@ scene.anims.create({
 //player jump ability
 function jumpAbility(){
       cursors.up.on('down', function() {
-      if (jumpCount>0) {
-
-        player.body.setVelocityY(-260);
-        jumpCount--;
-        jumpBoard.text=`${jumpCount}`;
-      }
+      doJump()
     }, this);
 }
 
@@ -38,13 +33,10 @@ function jumpAbility(){
 function playerMovement(){
   
     if (cursors.right.isDown) {
-      player.body.setVelocityX(80);
-      player.play("right",true)
+  moveRight();
     }
    else if (cursors.left.isDown) {
-      player.body.setVelocityX(-80);
-            player.play("left",true)
-
+     moveLeft();
     }
   else{
 			    player.anims.stop(null, true);
@@ -72,3 +64,27 @@ function checkOverlap(spriteA, spriteB) {
 	    var boundsB = spriteB.getBounds();
 	    return Phaser.Geom.Intersects.RectangleToRectangle(boundsA, boundsB);
 	}
+function playerDeath(){
+  if(player.y>315){
+  player.scene.scene.start("MainGame");
+  
+    
+  }
+}
+function moveLeft(){
+   player.body.setVelocityX(-80);
+            player.play("left",true)
+
+}
+function moveRight(){
+      player.body.setVelocityX(80);
+      player.play("right",true)
+}
+function doJump(){
+  if (jumpCount>0) {
+
+        player.body.setVelocityY(-260);
+        jumpCount--;
+        jumpBoard.text=`${jumpCount}`;
+      }
+}
