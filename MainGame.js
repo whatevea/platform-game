@@ -64,11 +64,29 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
 shop=this.add.image(170,130,"shop").setDepth(-1);
         renderFlag(this,this.totalcoins,635,100);
 
+
+//pointers
+     this.input.addPointer(1)
+   this.input.on('pointerdown', function (pointer) {
+     
+    if(pointer.x>config.width/2){
+doJump();
+    }});
+//leftkey
+    this.input.on('pointerdown', function (pointer) {
+    if(pointer.x<config.width/2){
+    leftPointer=pointer;
+      leftPointerPress=true;
+    }});
+  
+    //pointers
+    
 }
 
   update() {
      playerMovement() //normal player movement code
     playerDeath();
+ 
 
 
   }

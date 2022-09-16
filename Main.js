@@ -31,3 +31,6 @@ var jumpBoard;
 // var playertouchingshop;
 var shop;
 //"config" is then used to specify the properties of the game. 
+//controls for mobile
+var leftPointerPress=false;
+var leftPointer;

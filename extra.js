@@ -38,6 +38,18 @@ function playerMovement() {
   else if (cursors.left.isDown) {
     moveLeft();
   }
+
+else if(leftPointerPress){if(leftPointer.isDown && leftPointer.x<config.width/2 ){
+    //move code here
+    leftPointerRender(leftPointer)
+  }
+  else{
+    player.anims.stop(null, true);
+    player.body.setVelocityX(0);
+
+  }                        
+  }
+    
   else {
     player.anims.stop(null, true);
     player.body.setVelocityX(0);
@@ -101,3 +113,18 @@ function gameWin(bodyA) {
 bodyA.scene.scene.remove("MainGame")
    document.write("goodbye")
 }}
+
+function leftPointerRender(pointer) {
+  // console.log(pointer.velocity.x)
+
+
+  if (pointer.velocity.x > 0) {
+//move right code here
+  moveRight()
+  }
+  else if (pointer.velocity.x < 0) {
+    //move left code here
+    moveLeft()
+  }
+
+}
