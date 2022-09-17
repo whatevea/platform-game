@@ -14,5 +14,5 @@ function loadtiled_map(scene) {
 
 }
 function reverse() {
-  player.body.velocity.x -= 81;
+  player.x -=1.2;
 }

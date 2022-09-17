@@ -1,3 +1,5 @@
+var side="";
+var joyStick;
 //all  animation
 function allAnimations(scene) {
   scene.anims.create({
@@ -32,15 +34,15 @@ function jumpAbility() {
 //playermovement function
 function playerMovement() {
 
-  if (cursors.right.isDown) {
+  if (cursors.right.isDown || side.includes("right")) {
     moveRight();
   }
-  else if (cursors.left.isDown) {
+  else if (cursors.left.isDown || side.includes("left")) {
     moveLeft();
   }
-  else {
-    player.anims.stop(null, true);
+  else { 
     player.body.setVelocityX(0);
+    player.anims.stop(null, true);
 
   }
 }
@@ -50,7 +52,7 @@ function showHud(scene) {
   scene.add.image(10, 12, "money");
   scoreboard = scene.add.text(20, 6, "0");
   scene.add.image(50, 12, "jump");
-  jumpBoard = scene.add.text(57, 6, "8");
+  jumpBoard = scene.add.text(57, 6, jumpCount);
 }
 function increaseScore(amount) {
   score = score + amount;
@@ -82,7 +84,7 @@ function moveRight() {
 }
 function doJump() {
   if (jumpCount > 0) {
-
+    
     player.body.setVelocityY(-260);
     jumpCount--;
     jumpBoard.text = `${jumpCount}`;
@@ -101,3 +103,25 @@ function gameWin(bodyA) {
 bodyA.scene.scene.remove("MainGame")
    document.write("goodbye")
 }}
+
+function createJoystick(scene,x,y){
+  joyStick = scene.plugins.get('rexvirtualjoystickplugin').add(this, {
+                x: x,
+                y: y,
+                radius: 50,
+                base: scene.add.circle(0, 0, 50, 0x888888),
+                thumb: scene.add.circle(0, 0, 20, 0xcccccc),
+            })
+            .on('update',dumpJoyStickState, this);
+}
+
+function dumpJoyStickState(){
+    var cursorKeys = joyStick.createCursorKeys();
+        side = 'Key down: ';
+        for (var name in cursorKeys) {
+            if (cursorKeys[name].isDown) {
+                side += `${name}`;
+              console.log(side)
+            }
+        }
+}

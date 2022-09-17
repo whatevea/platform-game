@@ -82,11 +82,11 @@ function itemClicked(item, location) {
 
   //check if player-shop is touched and display the Sell button if touched
   let _buttons = {
-    btn1: { text: "Do Nothing", value: "nothing" },
-    btn2: { text: "Drop", value: "drop" }
+    btn1: { text: "Drop", value: "drop" },
+    btn2: { text: "Do Nothing", value: "nothing" }
   }
   if (checkOverlap(player, shop)) {
-    _buttons.btn3 = { text: "Sell", value: "sell" }
+    _buttons.btn3 = { text: "Sell ++", value: "sell" }
   }
   if (items_json[item].use) {
     _buttons.btn4 = { text: "Use Item", value: "use" }

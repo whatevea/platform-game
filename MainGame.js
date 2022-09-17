@@ -21,11 +21,23 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
         this.load.image('flower', "assets/flower.png");
         this.load.image('phone', "assets/phone.png");
       this.load.image("flag",'assets/flag.png');
+    //load the plugins
+    let url="https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexvirtualjoystickplugin.min.js";
+    this.load.plugin('rexvirtualjoystickplugin', url, true);
   }
   
 
   create() {
     
+    createJoystick(this,50,(config.height/2)+30);
+    // jumplogic
+          this.input.addPointer(1);
+    
+       this.input.on('pointerdown', function (pointer) {
+    if(pointer.x>config.width/2){
+doJump();
+    }});
+            
     this.totalcoins=20;
     //adding the flying emo code
    scoreNumberfly=new FlyingEmo(this,16) ;
@@ -58,11 +70,13 @@ class MainGame extends Phaser.Scene {//Creates the class for this scene
  //calling inventory and 1 item showing
    inventory=new Inventory(this,config.height-55,7);
   let p1=new Powerups(this,130,100,"flower");
+  new Powerups(this,742,298,"flower");
+    
   inventory.addItem("flower");
     
     //adding shop 
 shop=this.add.image(170,130,"shop").setDepth(-1);
-        renderFlag(this,this.totalcoins,635,100);
+  renderFlag(this,this.totalcoins,635,100);
 
 }
 

@@ -11,7 +11,7 @@ const config = {
         default: 'arcade',
         arcade: {
             gravity: { y: 640 },
-          debug:false
+          debug:true
         }
     },
     scene: 
@@ -26,7 +26,7 @@ var score=0;
 var scoreboard;
 var scoreNumberfly;
 var inventory;
-var jumpCount=80;
+var jumpCount=100;
 var jumpBoard;
 // var playertouchingshop;
 var shop;
